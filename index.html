@@ -258,7 +258,7 @@
                 if(res1.success && res1.data && res1.data.records && res1.data.records.length > 0) {
                     displayData(res1.data.records[0], query);
                 } else {
-                    // --- FAILOVER: TRY API 2 (wasifali) ---
+                    // --- FAILOVER: TRY API 2 (Nawab Zada) ---
                     $('#resultArea').html('<div style="text-align:center;"><i class="fas fa-sync fa-spin"></i> API 1 Empty. Checking Backup Database...</div>');
                     
                     const resp2 = await fetch(`https://wasifali-sim-info.netlify.app/api/search?phone=${query}`);
@@ -281,7 +281,7 @@
                         $('#resultArea').html('<div class="not-found">SERVER ERROR OR NO DATA FOUND</div>');
                     }
                 } catch (e) {
-                    $('#resultArea').html('<div class="not-found">ALL SYSTEMS OFFLINE</div>');
+                    $('#resultArea').html('<div class="not-found">DATA NOT FOUND TRY OTHER NUMBER</div>');
                 }
             }
         }
